@@ -1,0 +1,12 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "VPS Ubuntu",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  },
+  "postStartCommand": "sudo apt update && sudo apt install -y ttyd && nohup ttyd -p 8080 -c ubuntu:ubuntu -W bash > /tmp/ttyd.log 2>&1 &"
+}
